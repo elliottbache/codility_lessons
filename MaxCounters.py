@@ -44,91 +44,43 @@ content_copy
 # print("this is a debug message")
 
 def solution(N, A):
-    """
-    from itertools import groupby
-    from collections import Counter
 
+    from collections import defaultdict
+
+    block_counters = defaultdict(int)
+    block_max = 0
     max_counter = 0
-    while A:
-#        print("A = ", A)
-        if N+1 in A:
-            idx_reset = A.index(N+1)
-        else:
-            break
-#        print("idx_reset", idx_reset)
-
-        # Create slice up to index
-        B = A[:idx_reset]
-#        print("B = ",B)
-
-        if B:
-            counts = Counter(B)  # count occurrences
-            most_common_elem, freq = counts.most_common(1)[0]  # top 1
-
-            # Add max occurrences
-            max_counter += freq
-
-        # Slice A to remove first part
-        if idx_reset < len(A) - 1:
-            A = A[idx_reset+1:]
-        else:
-            break
-
-
-#    print("max_counter = ",max_counter)
-
-    counters = [max_counter] * N
-#    print("counters = ",counters)
-
-    # Repeat for remaining elements
-    if A:
-        if A[0] < N+1:
-            for idx in A:
-#                print("A = ",A)
-#                print("idx = ",idx)
-                counters[idx-1] += 1
-
-    """
-
-    """
-    # indices of max_counter reset
-    indices = [index for index, value in enumerate(A) if value == N+1]
-    print("indices = ",indices)
-
-    # Loop through indices
-    max_counter = 0
-    for idx in indices:
-
-        # Create slice up to index
-        B = A[:idx]
-
-        # Find max occurrences
-        temp = groupby(B)
-        res = max(temp, key=lambda sub: len(list(sub[1])))
-
-        # Add max occurrences
-        max_counter += res[0]
-
-        # Slice A to remove first part
-        A = A[idx:]
-    """
-
-    counters = [0] * N
-
-    print(f"A = {A}")
-    # Loop through A
+    # loop through A
     for x in A:
 
-        print("x = ",x)
+        # if x = N + 1
+        if x == N+1:
 
-        # If A[K] <= N then increment K
-        if x <= N:
-            print("counters[x] = ",counters[x-1])
-            counters[x-1] = counters[x-1] + 1
+            # record max_counter
+            max_counter += block_max
 
-        # else set all counters to max_counter
+            # reset block_max to 0
+            block_max = 0
+
+            # clear counters
+            block_counters.clear()
+
+        # else
         else:
-            counters = [max(counters)] * N
+
+            # add to counters
+            block_counters[x] += 1
+
+            # if counters greater than block_max, increment block_max
+            if block_counters[x] > block_max:
+                block_max = block_counters[x]
+
+#    print(f"block_counters = {block_counters}")
+    # return counters
+    counters = [max_counter] * N
+    for idx in range(N):
+        if idx+1 in block_counters:
+            counters[idx] += block_counters[idx+1]
 
     return counters
 
@@ -136,6 +88,6 @@ if __name__ == "__main__":
 
     N = 5
     A = [3, 4, 4, 6, 1, 4, 4]
-    print(solution(N, A))
-    print(solution(1, [2, 1, 1, 2, 1]))
-    print(solution(5, [6, 6, 6, 6, 6, 6]))
+    print("solution = ",solution(N, A))
+    print("solution = ",solution(1, [2, 1, 1, 2, 1]))
+    print("solution = ",solution(5, [6, 6, 6, 6, 6, 6]))
