@@ -44,6 +44,7 @@ content_copy
 # print("this is a debug message")
 
 def solution(N, A):
+    """
     from itertools import groupby
     from collections import Counter
 
@@ -74,6 +75,21 @@ def solution(N, A):
             break
 
 
+#    print("max_counter = ",max_counter)
+
+    counters = [max_counter] * N
+#    print("counters = ",counters)
+
+    # Repeat for remaining elements
+    if A:
+        if A[0] < N+1:
+            for idx in A:
+#                print("A = ",A)
+#                print("idx = ",idx)
+                counters[idx-1] += 1
+
+    """
+
     """
     # indices of max_counter reset
     indices = [index for index, value in enumerate(A) if value == N+1]
@@ -97,20 +113,9 @@ def solution(N, A):
         A = A[idx:]
     """
 
-#    print("max_counter = ",max_counter)
+    counters = [0] * N
 
-    counters = [max_counter] * N
-#    print("counters = ",counters)
-
-    # Repeat for remaining elements
-    if A:
-        if A[0] < N+1:
-            for idx in A:
-#                print("A = ",A)
-#                print("idx = ",idx)
-                counters[idx-1] += 1
-
-    """
+    print(f"A = {A}")
     # Loop through A
     for x in A:
 
@@ -118,14 +123,13 @@ def solution(N, A):
 
         # If A[K] <= N then increment K
         if x <= N:
-            print("counters[x] = ",counters[x])
+            print("counters[x] = ",counters[x-1])
             counters[x-1] = counters[x-1] + 1
 
         # else set all counters to max_counter
         else:
             counters = [max(counters)] * N
 
-    """
     return counters
 
 if __name__ == "__main__":
