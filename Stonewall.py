@@ -63,7 +63,7 @@ def solution(H):
 
     return counter
 
-def measure_last_block(last_blocks):
+def measure_last_block(last_blocks: list[int]) -> int:
     """
     Returns height of last block in stack
     :param last_blocks: stack of all remaining blocks
