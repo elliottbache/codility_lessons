@@ -41,7 +41,12 @@ each element of array A is an integer within the range [0..200,000].
 # print("this is a debug message")
 
 def solution(A: list[int]) -> int:
-    """Calculate max slice from input list of integers"""
+    """Calculate max profits from stock prices.
+    Args:
+        A (list[int]): Array of daily prices.
+    Returns:
+        int: maximum profit from stock prices.
+    """
 
     # calculate daily differences, later allowing max slice algorithm to
     # be used for calculating losses and gains
