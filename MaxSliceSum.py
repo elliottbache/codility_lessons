@@ -31,8 +31,11 @@ the result will be an integer within the range [−2,147,483,648..2,147,483,647]
 
 def solution(A: list[int]) -> int:
     """Calculate max slice from input list of integers.
-    Args: A (list[int]): input list of integers.
-    Returns: int: max slice
+
+    Args:
+        A (list[int]): input list of integers.
+    Returns:
+        int: max slice
     """
 
     max_ending, max_slice = 0, 0
