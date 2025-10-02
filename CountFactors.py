@@ -19,7 +19,7 @@ N is an integer within the range [1..2,147,483,647].
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
-def solution(N):
+def solution(N: int) -> int:
     """Count the number of divisors of an integer N
 
     Count the number of divisors assuming that if a is a divisor of n,
