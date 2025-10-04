@@ -82,12 +82,12 @@ def solution(A: list[int]) -> int:
 
     import math
 
-    # max number of flags due to K distance between flags and endpoints.
-    # n - 2 = K * (K - 1) + 1
     n = len(A)
     if n < 3:
         return 0
 
+    # max number of flags due to K distance between flags and endpoints.
+    # n - 2 = K * (K - 1) + 1
     max_flags = math.floor((1 + math.sqrt(1 + 4 * (n - 3))) / 2)
 
     # create list with peak positions
@@ -106,18 +106,20 @@ def solution(A: list[int]) -> int:
         return 1
 
     # loop through each number of flags starting at max
-    for n_flags in range(max_flags, 0, -1):
+    for K in range(max_flags, 0, -1):
 
         last_position = peak_positions[0]
         counter = 1
         for peak_position in peak_positions[1:]:
 
-            if peak_position - last_position >= n_flags:
+            # count peaks that are K distance from last flag
+            if peak_position - last_position >= K:
                 last_position = peak_position
                 counter += 1
 
-            if counter >= n_flags:
-                return n_flags
+            # return a maximum of K flags
+            if counter >= K:
+                return K
 
     return 0
 
