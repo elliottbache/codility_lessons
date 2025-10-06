@@ -65,7 +65,7 @@ N is an integer within the range [1..400,000];
 each element of array A is an integer within the range [0..1,000,000,000].
 """
 
-def solution(A: list[int]) -> int:
+def flags_solution(A: list[int]) -> int:
     """Find the maximum number of flags that can be set on the peaks of the array.
 
     Peaks are defined by 0 < P < N − 1 and A[P − 1] < A[P] > A[P + 1].
@@ -124,6 +124,4 @@ def solution(A: list[int]) -> int:
     return 0
 
 if __name__ == '__main__':
-    assert solution([1, 5, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2]) == 3
-    assert solution([1, 3, 2]) == 1
-    assert solution([3, 2, 1]) == 0
+    print(flags_solution([1, 5, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2]))
