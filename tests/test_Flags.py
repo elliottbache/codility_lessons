@@ -21,4 +21,4 @@ def test_base_case(base_case):
 def test_simple_input(simple_input_one_peak,simple_input_no_peaks):
 
     assert flags_solution(simple_input_one_peak) == 1
-    assert flags_solution(simple_input_no_peaks) == 1
+    assert flags_solution(simple_input_no_peaks) == 0
