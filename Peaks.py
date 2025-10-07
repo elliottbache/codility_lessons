@@ -75,7 +75,7 @@ each element of array A is an integer within the range [0..1,000,000,000].
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
-def solution(A: list[int]) -> int:
+def peaks_solution(A: list[int]) -> int:
     """Find the maximum number of equal blocks the array A can be
     divided into.
 
@@ -172,4 +172,4 @@ def integer_divisors(N: int) -> list[int]:
 
 if __name__ == '__main__':
     A = [1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2]
-    print(solution(A))
+    print(peaks_solution(A))
