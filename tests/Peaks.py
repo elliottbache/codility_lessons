@@ -89,33 +89,27 @@ def solution(A: list[int]) -> int:
         int: The maximum number of blocks into which the array A can be divided.
     """
 
-#    print(f"A: {A}")
-    # calculate integer divisors
+    # calculate possible integers that divide the mountain into
+    # equal blocks
     divisors = integer_divisors(len(A))
     divisors.sort(reverse=True)
-    divisors.pop(0)
-#    print(f"divisors: {divisors}")
 
-    # loop through divisors starting with largest.  use while
+    # first element corresponds to 1-element blocks, which don't have
+    # peaks
+    divisors.pop(0)
+
     i = 0
     while i < len(divisors):
-
-#        print(f"i: {i}")
 
         n_divisors = divisors[i]
         n_elements = len(A)//n_divisors
 
-#        print(f"n_divisors: {n_divisors}, n_elements: {n_elements}")
-        # loop through blocks
         is_peak = False
         for j in range(n_divisors):
-
-#            print(f"j: {j}")
 
             # define limits for this block
             first_element = j*n_elements
             last_element = (j+1)*n_elements - 1
-#            print(f"first_element = {first_element}, last_element = {last_element}")
 
             # create list for this block plus the previous and next elements
             B = list()
@@ -124,7 +118,6 @@ def solution(A: list[int]) -> int:
             B.extend(A[first_element:last_element+1])
             if j != n_divisors - 1:
                 B.append(A[last_element+1])
-#            print(f"B = {B}")
 
             # find first peak
             is_peak = False
@@ -135,7 +128,6 @@ def solution(A: list[int]) -> int:
                     break
                 k += 1
 
-#            print(f"is_peak = {is_peak}")
             # if no peak, break
             if not is_peak:
                 break
@@ -144,8 +136,6 @@ def solution(A: list[int]) -> int:
             return n_divisors
 
         i += 1
-
-
 
     return 0
 
@@ -161,7 +151,9 @@ def integer_divisors(N: int) -> list[int]:
     Returns:
         list[int]: the divisors of N
     """
-    i, result = 1, list()
+
+    i = 1
+    result = list()
     while i**2 < N:
 
         # if we find one divisor "a" then its conjugate "n/a" is also a
