@@ -1,7 +1,9 @@
 """
 You are given an array A consisting of N integers.
 
-For each number A[i] such that 0 ≤ i < N, we want to count the number of elements of the array that are not the divisors of A[i]. We say that these elements are non-divisors.
+For each number A[i] such that 0 ≤ i < N, we want to count the number of
+elements of the array that are not the divisors of A[i]. We say that these
+elements are non-divisors.
 
 For example, consider integer N = 5 and array A such that:
 
@@ -24,7 +26,8 @@ Write a function:
 def solution(A)
 content_copy
 
-that, given an array A consisting of N integers, returns a sequence of integers representing the amount of non-divisors.
+that, given an array A consisting of N integers, returns a sequence of integers
+representing the amount of non-divisors.
 
 Result array should be returned as an array of integers.
 
@@ -49,6 +52,8 @@ content_copy
 
 from collections import defaultdict
 from typing import List, Set, Dict
+
+
 def count_non_divisible_solution(A: List[int]) -> List[int]:
     """Return list of non-divisors.
 
@@ -81,7 +86,7 @@ def count_non_divisible_solution(A: List[int]) -> List[int]:
         divisor_counters[i] += 1
 
     # up to max_element do factorization, creating dict of sets
-    F = factorization_sets(max_element,possible_divisors)
+    F = factorization_sets(max_element, possible_divisors)
 
     n_divisors = dict()
     for divisor in possible_divisors:
@@ -96,7 +101,8 @@ def count_non_divisible_solution(A: List[int]) -> List[int]:
     return n_non_divisors
 
 
-def factorization_sets(max_element: int,possible_divisors: Set[int]) -> Dict[int, Set[int]]:
+def factorization_sets(max_element: int, possible_divisors: Set[int]) \
+        -> Dict[int, Set[int]]:
     """Create dict of sets holding factorization for each integer.
 
     Args:
@@ -124,8 +130,9 @@ def factorization_sets(max_element: int,possible_divisors: Set[int]) -> Dict[int
 
     return F
 
+
 if __name__ == '__main__':
     A = [3, 1, 2, 3, 6]
-    print(solution(A))
+    print(count_non_divisible_solution(A))
     A = [2]
-    print(solution(A))
+    print(count_non_divisible_solution(A))
