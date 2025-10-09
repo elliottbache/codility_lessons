@@ -60,6 +60,12 @@ def count_non_divisible_solution(A: List[int]) -> List[int]:
 
     Returns:
         list[int]: The number of non-divisors for each element of A.
+
+    Usage:
+    >>> count_non_divisible_solution([3, 1, 2, 3, 6])
+    [2, 4, 3, 2, 0]
+    >>> count_non_divisible_solution([2])
+    [0]
     """
 
     n_non_divisors = [0] * len(A)
@@ -100,6 +106,11 @@ def factorization_sets(max_element: int,possible_divisors: Set[int]) -> Dict[int
 
     Returns:
         dict[int, Any]: A dict of sets holding factorization for each integer.
+
+    Usage:
+    >>> {k: sorted(v) for k, v in factorization_sets(max_element=6, \
+        possible_divisors={1, 2, 3, 6}).items()}
+    {1: [1], 2: [1, 2], 3: [1, 3], 4: [1, 2], 5: [1], 6: [1, 2, 3, 6]}
     """
 
     F: Dict[int, Set[int]] = dict()
