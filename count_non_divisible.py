@@ -132,6 +132,10 @@ def factorization_sets(max_element: int, possible_divisors: Set[int]) \
 
 
 if __name__ == '__main__':
+
+    import doctest
+
+    doctest.testmod()
     A = [3, 1, 2, 3, 6]
     print(count_non_divisible_solution(A))
     A = [2]
