@@ -49,7 +49,7 @@ content_copy
 
 from collections import defaultdict
 from typing import List, Set, Dict
-def solution(A: List[int]) -> List[int]:
+def count_non_divisible_solution(A: List[int]) -> List[int]:
     """Return list of non-divisors.
 
     The number of non-divisors for each element is returned as a list
