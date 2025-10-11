@@ -133,5 +133,5 @@ if __name__ == '__main__':
     N = 26
     P = [1, 4, 16]
     Q = [26, 10, 20]
-    print(solution(N,P,Q))
-    print(solution(1, [1], [1]))
+    print(count_semiprimes_solution(N,P,Q))
+    print(count_semiprimes_solution(1, [1], [1]))
