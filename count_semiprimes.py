@@ -46,7 +46,7 @@ P[i] ≤ Q[i].
 from typing import List
 
 
-def solution(N: int, P: List[int], Q: List[int]) -> List[int]:
+def count_semiprimes_solution(N: int, P: List[int], Q: List[int]) -> List[int]:
     """Calculate number of semiprimes within each range.
 
     Given 2 lists with ranges, return a list of the number of
@@ -61,7 +61,7 @@ def solution(N: int, P: List[int], Q: List[int]) -> List[int]:
         List[int]: the number of semiprimes within each range
 
     Usage:
-    >>> solution(26, [1, 4, 16], [26, 10, 20])
+    >>> count_semiprimes_solution(26, [1, 4, 16], [26, 10, 20])
     [10, 4, 0]
     """
     # create list of prime numbers up to sqrt(N)
