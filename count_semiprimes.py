@@ -105,7 +105,7 @@ def count_semiprimes_solution(N: int, P: List[int], Q: List[int]) -> List[int]:
     return results
 
 
-def sieve(n):
+def sieve(n: int) -> List[int]:
     """Create list of prime numbers from 1 to n.
 
     Args:
