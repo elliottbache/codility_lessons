@@ -92,6 +92,10 @@ def flags_solution(A: list[int]) -> int:
     Returns:
         int: the maximum number of flags that can be set on the
             peaks of the array.
+
+    Examples:
+        >>> flags_solution([1, 5, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2])
+        3
     """
 
     import math

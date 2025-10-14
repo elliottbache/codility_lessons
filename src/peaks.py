@@ -105,6 +105,11 @@ def peaks_solution(A: list[int]) -> int:
     Returns:
         int: The maximum number of blocks into which the array A can be
          divided.
+
+    Examples:
+        >>> A = [1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2]
+        >>> peaks_solution(A)
+        3
     """
 
     # calculate possible integers that divide the mountain into
@@ -169,6 +174,10 @@ def integer_divisors(N: int) -> list[int]:
 
     Returns:
         list[int]: the divisors of N
+
+    Examples:
+        >>> sorted(integer_divisors(12))
+        [1, 2, 3, 4, 6, 12]
     """
 
     i = 1
