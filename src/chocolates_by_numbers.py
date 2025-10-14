@@ -99,7 +99,7 @@ def greatest_common_denominator(a: int, b: int, res: int) -> int:
 
     Examples:
         >>> greatest_common_denominator(10, 4, 1)
-        5
+        2
     """
 
     if a == b:
