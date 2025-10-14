@@ -68,9 +68,10 @@ def count_semiprimes_solution(N: int, P: List[int], Q: List[int]) -> List[int]:
     Returns:
         List[int]: the number of semiprimes within each range
 
-    Usage:
-    >>> count_semiprimes_solution(26, [1, 4, 16], [26, 10, 20])
-    [10, 4, 0]
+    Examples:
+        >>> from src.count_semiprimes import count_semiprimes_solution
+        >>> count_semiprimes_solution(26, [1, 4, 16], [26, 10, 20])
+        [10, 4, 0]
     """
     # create list of prime numbers up to sqrt(N)
     primes = sieve(N//2)
@@ -114,9 +115,10 @@ def sieve(n: int) -> List[int]:
     Returns:
         list: a list of prime numbers
 
-    Usage:
-    >>> sieve(13)
-    [2, 3, 5, 7, 11, 13]
+    Examples:
+        >>> from src.count_semiprimes import sieve
+        >>> sieve(13)
+        [2, 3, 5, 7, 11, 13]
     """
     sieve = [True] * (n + 1)
     sieve[0] = False
