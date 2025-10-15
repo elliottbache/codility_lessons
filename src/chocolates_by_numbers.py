@@ -21,8 +21,7 @@ following the above rules.
 
 Write a function:
 
-def solution(N, M)
-content_copy
+def chocolates_by_numbers_solution(N, M)
 
 that, given two positive integers N and M, returns the number of chocolates
 that you will eat.
@@ -39,7 +38,7 @@ N and M are integers within the range [1..1,000,000,000].
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
-def solution(N: int, M: int) -> int:
+def chocolates_by_numbers_solution(N: int, M: int) -> int:
     """Count number of chocolates in a circle that you eat before
     coming across a wrapper.
 
@@ -54,7 +53,7 @@ def solution(N: int, M: int) -> int:
         int: number of chocolates you skip each time
 
     Examples:
-        >>> solution(10, 4)
+        >>> chocolates_by_numbers_solution(10, 4)
         5
     """
 
@@ -81,6 +80,7 @@ def least_common_multiple(a: int, b: int) -> int:
     """
 
     return a * b // greatest_common_denominator(a, b, 1)
+
 
 def greatest_common_denominator(a: int, b: int, res: int) -> int:
     """Find the greatest common denominator.
@@ -117,4 +117,4 @@ def greatest_common_denominator(a: int, b: int, res: int) -> int:
 
 
 if __name__ == '__main__':
-    print(solution(10, 4))
+    print(chocolates_by_numbers_solution(10, 4))
