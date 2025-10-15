@@ -1,6 +1,6 @@
 import pytest
 
-from Flags import flags_solution
+from flags import flags_solution
 
 @pytest.mark.parametrize("A, expected", [
     ([1, 5, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2], 3),

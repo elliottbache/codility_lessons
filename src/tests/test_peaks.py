@@ -1,5 +1,5 @@
 import pytest
-from Peaks import peaks_solution
+from peaks import peaks_solution
 
 @pytest.fixture
 def A():
