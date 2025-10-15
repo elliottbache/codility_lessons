@@ -53,6 +53,7 @@ def chocolates_by_numbers_solution(N: int, M: int) -> int:
         int: number of chocolates you skip each time
 
     Examples:
+        >>> from src.chocolates_by_numbers import chocolates_by_numbers_solution
         >>> chocolates_by_numbers_solution(10, 4)
         5
     """
@@ -75,6 +76,7 @@ def least_common_multiple(a: int, b: int) -> int:
         int: least common multiple of two integers
 
     Examples:
+        >>> from src.chocolates_by_numbers import least_common_multiple
         >>> least_common_multiple(10, 4)
         20
     """
@@ -98,6 +100,7 @@ def greatest_common_denominator(a: int, b: int, res: int) -> int:
         int: greatest common denominator
 
     Examples:
+        >>> from src.chocolates_by_numbers import greatest_common_denominator
         >>> greatest_common_denominator(10, 4, 1)
         2
     """

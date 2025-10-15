@@ -94,6 +94,7 @@ def flags_solution(A: list[int]) -> int:
             peaks of the array.
 
     Examples:
+        >>> from src.flags import flags_solution
         >>> flags_solution([1, 5, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2])
         3
     """

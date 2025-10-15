@@ -107,6 +107,7 @@ def peaks_solution(A: list[int]) -> int:
          divided.
 
     Examples:
+        >>> from src.peaks import peaks_solution
         >>> A = [1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2]
         >>> peaks_solution(A)
         3
@@ -176,6 +177,7 @@ def integer_divisors(N: int) -> list[int]:
         list[int]: the divisors of N
 
     Examples:
+        >>> from src.peaks import integer_divisors
         >>> sorted(integer_divisors(12))
         [1, 2, 3, 4, 6, 12]
     """
